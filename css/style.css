@@ -1,0 +1,994 @@
+/* ========== СБРОС И БАЗОВЫЕ СТИЛИ ========== */
+* {
+    margin: 0; /* убираем стандартные внешние отступы у всех элементов */
+    padding: 0; /* убираем стандартные внутренние отступы */
+    box-sizing: border-box; /* ширина и высота теперь считаются вместе с padding и border */
+}
+
+body {
+    background-color: #FFF9F8;
+    color: #222222;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: #D92D3F; /* все ссылки по умолчанию красные */
+    text-decoration: none; /* убираем стандартное подчёркивание */
+}
+
+
+/* ========== КОНТЕЙНЕР ========== */
+.container {
+    max-width: 1200px; /* ограничиваем ширину контента, чтобы на больших экранах не растягивался */
+    margin: 0 auto; /* центрируем контейнер по горизонтали */
+    padding: 0 20px; /* небольшие отступы слева и справа на узких экранах */
+}
+
+
+
+/* ========== ШАПКА ========== */
+.header {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #D92D3F; /* красная линия снизу (твой фирменный цвет) */
+    box-shadow: 0 2px 12px rgba(217, 45, 63, 0.08); /* мягкая тень с лёгким красным оттенком */
+    position: sticky; /* шапка будет прилипать к верху при прокрутке */
+    top: 0; /* закрепляем шапку вверху */
+    z-index: 100; /* чтобы шапка была поверх других элементов */
+}
+
+.header__inner {
+    display: flex;   /* включаем Flexbox — элементы выстраиваются в ряд */
+    align-items: center; /* выравниваем логотип и меню по вертикали по центру */
+    justify-content: space-between; /* логотип слева, меню справа */ 
+    min-height: 90px; /* минимальная высота шапки */
+    gap: 40px;  /* минимальное расстояние между логотипом и меню */
+}
+
+/* ========== ЛОГОТИП ========== */
+.header__logo img {
+    display: block;               /* убираем лишний отступ под картинкой */
+    width: 100px;                  /* ширина логотипа (можешь поменять на 70 или 90) */
+    height: auto;                 /* высота подстраивается автоматически, пропорции сохраняются */
+    transition: transform 0.25s ease; /* плавное изменение размера */
+}
+
+.header__logo a:hover img {
+    transform: scale(1.02);       /* при наведении логотип чуть увеличивается */
+}
+
+/* ========== НАВИГАЦИЯ ========== */
+.nav {
+    display: flex; /* ссылки тоже выстраиваем в ряд */
+    align-items: center;  
+    gap: 32px; /* расстояние между пунктами меню */
+}
+
+.nav__link {
+    color: #222222;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 14px;           /* делаем ссылки «кнопками» */
+    border-radius: 8px;          /* скругление */
+    transition: color 0.2s ease;
+    white-space: nowrap;        /* запрещаем перенос текста внутри ссылки для О НАС*/
+}
+
+/* Красивый эффект при наведении */
+.nav__link:hover {
+    color: #D92D3F;
+    background-color: rgba(217, 45, 63, 0.08); /* лёгкий красный фон */
+}
+
+
+/* ========== БУРГЕР-МЕНЮ ========== */
+
+/* Кнопка бургера — по умолчанию скрыта */
+.burger {
+    display: none;                  /* на компьютере не показываем */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+}
+
+/* Три полоски бургера */
+.burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #222222;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ===== Мобильная версия ===== */
+@media (max-width: 900px) {
+
+    /* Показываем кнопку бургера */
+    .burger {
+        display: flex;
+    }
+
+    /* Скрываем обычное меню */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;               /* уезжает за правый край */
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: right 0.35s ease;
+        z-index: 100;
+    }
+
+    /* Когда меню открыто */
+    .nav.nav--open {
+        right: 0;                   /* выезжает на экран */
+    }
+
+    .nav__link {
+        font-size: 18px;
+        padding: 10px 16px;
+    }
+
+    /* Анимация превращения бургера в крестик */
+    .burger.burger--active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .burger.burger--active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.burger--active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}
+
+
+/* Общие отступы для секций */
+main section {
+    padding: 60px 0; /* внутренние отступы сверху и снизу по 60px */
+}
+
+
+/* ========== РАЗДЕЛ ОТЗЫВЫ ========== */
+/* Вводный блок только на странице отзывов */
+.reviews-intro {
+    padding-bottom: 20px;            /* меньший отступ снизу перед виджетом */
+}
+
+/* Заголовок h1 внутри вводного блока */
+.reviews-intro h1 {
+    font-size: 32px;                 /* размер шрифта заголовка */
+    font-weight: 700;                /* жирность шрифта (700 = bold) */
+    color: #222222;                  /* цвет текста — почти чёрный */
+    margin-bottom: 16px;             /* внешний отступ снизу от заголовка */
+    line-height: 1.3;                /* межстрочный интервал (чтобы строки не слипались) */
+    position: relative;              /* нужно для линии */
+    display: inline-block;           /* чтобы линия была по ширине текста */
+}
+
+/* Красивая линия под заголовком */
+.reviews-intro h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;                    /* чуть ниже текста */
+    width: 70px;                     /* длина линии */
+    height: 4px;
+    background-color: #D92D3F;       /* твой фирменный красный */
+    border-radius: 2px;
+}
+
+
+
+/* Абзац с описанием */
+.reviews-intro p {
+    font-size: 17px;                 /* размер обычного текста */
+    color: #555555;                  /* чуть светлее основного цвета, чтобы не конкурировал с заголовком */
+    max-width: 640px;                /* ограничиваем ширину текста, чтобы он хорошо читался */
+    line-height: 1.6;                /* комфортный межстрочный интервал для чтения */
+}
+
+/* Секция, в которой лежит виджет отзывов */
+.reviews {
+    padding-top: 20px;               /* небольшой отступ сверху */
+    padding-bottom: 80px;            /* большой отступ снизу, чтобы страница «дышала» */
+}
+
+/* Обёртка вокруг виджета */
+.reviews__widget {
+    display: flex;                   /* включаем Flexbox */
+    justify-content: center;         /* выравниваем виджет по центру горизонтально */
+}
+
+/* Блок, в котором находится iframe */
+.reviews__widget > div {
+    width: 100%;                     /* ширина 100% от родителя */
+    max-width: 560px;                /* но не больше 560px на больших экранах */
+    height: 700px;                   /* фиксированная высота виджета */
+    border-radius: 16px;             /* скругление углов */
+    overflow: hidden;                /* обрезаем всё, что выходит за скруглённые углы */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* мягкая тень для объёма */
+    border: 1px solid #f0f0f0;       /* тонкая светлая рамка */
+}
+
+/* Сам iframe (окно с отзывами Яндекса) */
+.reviews__widget iframe {
+    border: none !important;         /* убираем стандартную рамку браузера */
+    border-radius: 16px;             /* скругляем углы iframe */
+}
+
+
+/* ========== РАЗДЕЛ РАСПИСАНИЕ ========== */
+
+/* Вводный блок страницы расписания */
+.schedule-intro {
+    padding: 60px 0 40px;                /* отступы: сверху 60px, снизу 40px */
+}
+
+/* Заголовок */
+.schedule-intro h1 {
+    font-size: 34px;                     /* размер заголовка */
+    font-weight: 700;                    /* жирный */
+    color: #222222;                      /* цвет текста */
+    margin-bottom: 24px;                 /* отступ снизу */
+    line-height: 1.3;                    /* межстрочный интервал */
+    position: relative;                  /* нужно для декоративной линии */
+    display: inline-block;               /* линия будет только под текстом */
+}
+
+/* Красная линия под заголовком (как на странице отзывов) */
+.schedule-intro h1::after {
+    content: '';                         /* обязательное свойство */
+    position: absolute;
+    left: 0;
+    bottom: -8px;                        /* позиция линии чуть ниже текста */
+    width: 70px;                         /* длина линии */
+    height: 4px;                         /* толщина */
+    background-color: #D92D3F;           /* фирменный красный */
+    border-radius: 2px;                  /* лёгкое скругление */
+}
+
+/* Текст под заголовком */
+.schedule-intro p {
+    font-size: 17px;                     /* размер текста */
+    color: #555555;                      /* приглушённый цвет */
+    max-width: 640px;                    /* ограничиваем ширину для удобства чтения */
+    line-height: 1.6;                    /* комфортный межстрочный интервал */
+}
+
+
+/* ========== РАЗДЕЛ НАПРАВЛЕНИЯ ========== */
+
+/* Вводный блок */
+.directions-intro {
+    padding: 60px 0 20px;
+}
+
+.directions-intro h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 24px;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+}
+
+/* Красная линия под заголовком */
+.directions-intro h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 70px;
+    height: 4px;
+    background-color: #D92D3F;
+    border-radius: 2px;
+}
+
+.directions-intro p {
+    font-size: 17px;
+    color: #555555;
+    max-width: 640px;
+    line-height: 1.6;
+}
+
+/* Секция с карточками */
+.directions {
+    padding-top: 10px; /* маленький отступ сверху */
+    padding-bottom: 80px;
+}
+
+/* Сетка карточек */
+.directions__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* автоматическая сетка */
+    gap: 24px;                               /* расстояние между карточками */
+}
+
+/* Телефоны — 1 колонка */
+@media (max-width: 600px) {
+    .directions__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Общий стиль карточки */
+.direction-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0f0f0;
+    transition: all 0.35s ease;             /* плавность всех изменений */
+}
+
+/* Заголовок внутри карточки */
+.direction-card h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+/* Список */
+.direction-card ul {
+    list-style: none;                       /* убираем стандартные маркеры */
+}
+
+.direction-card li {
+    position: relative;
+    padding-left: 22px;                     /* место для кастомного маркера */
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #444444;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Кастомный маркер (красная точка) */
+.direction-card li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background-color: #D92D3F;
+    border-radius: 50%;
+}
+
+/* ===== Анимации при наведении на карточку ===== */
+
+/* 1. Карточка "Языки" — поднимается вверх */
+.direction-card--languages:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(217, 45, 63, 0.15);
+    border-color: rgba(217, 45, 63, 0.2);
+}
+
+/* 2. Карточка "Школьные предметы" — лёгкое увеличение */
+.direction-card--school:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(217, 45, 63, 0.15);
+}
+
+/* 3. Карточка "Развитие" — поднимается + лёгкий наклон */
+.direction-card--development:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 12px 30px rgba(217, 45, 63, 0.15);
+}
+
+/* 4. Карточка "Психология и тренинги" — поднимается + лёгкое увеличение */
+.direction-card--psychology:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(217, 45, 63, 0.15);
+    border-color: rgba(217, 45, 63, 0.2);
+}
+
+/* Анимация пунктов списка при наведении на карточку */
+.direction-card:hover li {
+    transform: translateX(6px);             /* пункты слегка сдвигаются вправо */
+    color: #222222;
+}
+
+
+/* ========== ГЛАВНАЯ СТРАНИЦА ========== */
+
+/* ----- Общие стили для заголовков секций ----- */
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 16px;
+    line-height: 1.3;
+    position: relative;
+    display: inline-block;
+}
+
+/* Красная линия под заголовками секций */
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 4px;
+    background-color: #D92D3F;
+    border-radius: 2px;
+}
+
+.section-text {
+    font-size: 17px;
+    color: #555555;
+    max-width: 640px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* ----- Кнопки ----- */
+.btn {
+    display: inline-block;
+    background-color: #D92D3F;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b82433;       /* чуть темнее при наведении */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(217, 45, 63, 0.25);
+}
+
+/* Кнопка-контур */
+.btn--outline {
+    background-color: transparent;
+    color: #D92D3F;
+    border: 2px solid #D92D3F;
+}
+
+.btn--outline:hover {
+    background-color: #D92D3F;
+    color: #ffffff;
+}
+
+/* ========== 1. ГЛАВНЫЙ БАННЕР (HERO) ========== */
+
+.hero {
+    padding: 80px 0 70px;
+    background-color: #fff5f4;       /* чуть более тёплый фон */
+}
+
+.hero__inner {
+    max-width: 720px;
+}
+
+.hero__title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero__text {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* ========== 2. НАПРАВЛЕНИЯ (КРАТКИЙ СПИСОК) ========== */
+
+.directions-preview {
+    padding: 70px 0;
+}
+
+.directions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    margin-bottom: 36px;
+}
+
+.directions-list li {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 10px 18px;
+    border-radius: 30px;             /* овальные «таблетки» */
+    font-size: 15px;
+    color: #333333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+.directions-list li:hover {
+    border-color: #D92D3F;
+    color: #D92D3F;
+    transform: translateY(-2px);
+}
+
+/* ========== 3. ПОЧЕМУ ВЫБИРАЮТ ЭДВАНС ========== */
+
+.advantages {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.advantages-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.advantages-list li {
+    background-color: #FFF9F8;
+    padding: 24px 22px;
+    border-radius: 14px;
+    font-size: 16px;
+    color: #333333;
+    border: 1px solid #f0eaea;
+    position: relative;
+    padding-left: 48px;
+    transition: transform 0.25s ease;
+}
+
+.advantages-list li:hover {
+    transform: translateY(-4px);
+}
+
+/* Красная галочка слева */
+.advantages-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    color: #D92D3F;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* ========== 4. ПРИЗЫВ К ДЕЙСТВИЮ ========== */
+
+.cta {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff5f4;
+}
+
+.cta .section-title {
+    display: inline-block;
+}
+
+.cta .section-text {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta .btn {
+    margin-top: 10px;
+}
+
+
+/* ========== СТРАНИЦА КОНТАКТЫ ========== */
+
+/* Общие отступы секций */
+.contacts-info,
+.contacts-social,
+.contacts-map {
+    padding: 60px 0;
+}
+
+/* ----- Контактные карточки ----- */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.contact-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #888888;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.contact-card p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222222;
+    margin: 0;
+}
+
+.contact-card a {
+    color: #D92D3F;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.contact-card a:hover {
+    color: #b82433;
+}
+
+/* ----- Социальные сети ----- */
+.social-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 14px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #222222;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.social-btn:hover {
+    border-color: #D92D3F;
+    color: #D92D3F;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(217, 45, 63, 0.15);
+}
+
+.social-btn img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* ----- Карта ----- */
+.map-wrapper {
+    margin-top: 30px;
+    border-radius: 16px;
+    overflow: hidden;               /* чтобы карта имела скруглённые углы */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+
+
+/* ========== СТРАНИЦА «О НАС» ========== */
+
+/* Общие отступы секций */
+.about-director,
+.about-approach,
+.about-more {
+    padding: 70px 0;
+}
+
+/* ----- 1. Блок руководителя ----- */
+
+.director {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.director__photo {
+    flex-shrink: 0;
+}
+
+.director__photo img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.director__content {
+    flex: 1;
+    min-width: 280px;
+}
+
+.director__content h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 16px;
+}
+
+.director__content p {
+    font-size: 17px;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+/* ----- 2. Наш подход ----- */
+
+.about-approach {
+    background-color: #fff5f4;
+}
+
+.approach-text {
+    max-width: 720px;
+    margin-top: 30px;
+}
+
+.approach-text p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* ----- 3. Эдванс — это не только занятия ----- */
+
+.about-more {
+    padding: 80px 0;
+}
+
+/* Один рассказывающий блок */
+.story-block {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 70px;
+}
+
+/* Когда нужно поменять местами (картинка справа) */
+.story-block--reverse {
+    flex-direction: row-reverse;
+}
+
+/* Картинка */
+.story-block__image {
+    flex: 1;
+}
+
+.story-block__image img {
+    width: 100%;
+    height: auto;                 /* убираем фиксированную высоту */
+    max-height: 380px;            /* максимальная высота */
+    object-fit: contain;          /* картинка полностью видна, без обрезки */
+    border-radius: 20px;
+}
+
+/* Когда две фотографии */
+.story-block__image--double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.story-block__image--double img {
+    height: 260px;
+    border-radius: 16px;
+}
+
+/* Текст */
+.story-block__text {
+    flex: 1;
+}
+
+.story-block__text h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+/* Красная линия под заголовком */
+.story-block__text h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 50px;
+    height: 3px;
+    background-color: #D92D3F;
+    border-radius: 2px;
+}
+
+.story-block__text p {
+    font-size: 17px;
+    color: #555555;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* ========== Адаптив ========== */
+
+@media (max-width: 800px) {
+
+    /* Руководитель */
+    .director {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .director__photo img {
+        width: 220px;
+        height: 220px;
+    }
+
+    /* Чередующиеся блоки */
+    .story-block,
+    .story-block--reverse {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .story-block__image img {
+        height: 260px;
+    }
+
+    /* Две фотографии на мобильном — друг под другом */
+    .story-block__image--double {
+        grid-template-columns: 1fr;
+    }
+
+    .story-block__image--double img {
+        height: 220px;
+    }
+
+    .story-block__text h3 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+/* ========== ПОДВАЛ ========== */
+
+.footer {
+    background-color: #2c2c2c;          /* тёмный фон */
+    color: #e0e0e0;                     /* светлый текст */
+    padding: 50px 0 40px;
+    margin-top: 60px;                   /* отступ от основного контента */
+}
+
+.footer__inner {
+    display: flex;
+    justify-content: space-between;     /* колонки по краям */
+    gap: 40px;
+    flex-wrap: wrap;                    /* на мобильном переносятся */
+}
+
+.footer__col {
+    flex: 1;
+    min-width: 240px;
+}
+
+/* Название в подвале */
+.footer__brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+/* Заголовок колонки */
+.footer__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+/* Обычный текст в подвале */
+.footer__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 8px;
+}
+
+/* Ссылки в подвале */
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer a:hover {
+    color: #D92D3F;                     /* фирменный красный при наведении */
+}
+
+/* Адаптив для телефона */
+@media (max-width: 600px) {
+    .footer__inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* ========== СОЦИАЛЬНЫЕ ИКОНКИ В ПОДВАЛЕ ========== */
+
+/* Контейнер, в котором лежат иконки */
+.footer__social {
+    display: flex;                  /* выстраиваем иконки в ряд */
+    gap: 16px;                      /* расстояние между иконками */
+    margin-top: 8px;                /* небольшой отступ сверху от заголовка */
+}
+
+/* Ссылка-обёртка вокруг каждой иконки */
+.footer__social a {
+    display: flex;                  /* чтобы картинка была по центру */
+    align-items: center;            /* вертикальное выравнивание */
+    justify-content: center;        /* горизонтальное выравнивание */
+    width: 42px;                    /* ширина кружка */
+    height: 42px;                   /* высота кружка */
+    background-color: rgba(255, 255, 255, 0.08); /* полупрозрачный белый фон */
+    border-radius: 50%;             /* делаем форму круглой */
+    transition: all 0.3s ease;      /* плавная анимация при наведении */
+}
+
+/* Эффект при наведении на иконку */
+.footer__social a:hover {
+    background-color: #D92D3F;      /* фон становится фирменным красным */
+    transform: translateY(-3px);    /* иконка слегка поднимается вверх */
+}
+
+/* Сама картинка иконки */
+.footer__social img {
+    width: 22px;                    /* ширина иконки */
+    height: 22px;                   /* высота иконки */
+    object-fit: contain;            /* сохраняем пропорции картинки */
+}
+
+
+
