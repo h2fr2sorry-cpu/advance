@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- 1. Кодировка и адаптивность (база) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Прайс-лист </title> 
+
+    <!-- Вот эта строка добавляет иконку -->
+    <link rel="icon" href="favicon.ico" type="image/png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- здесь шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                    
+                <div class="header__logo"> 
+                    <a href="index.html"> 
+                        <img src="images/logo.png" alt="Логотип образовательного центра Эдванс" width="100" height="100"> 
+                    </a> 
+                </div>
+                    
+                <!-- Кнопка бургера -->
+                <button class="burger" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>             
+
+                <nav class="nav">
+                    <a class="nav__link" href="directions.html"> Направления </a>
+                    <a class="nav__link" href="about.html"> О нас </a>
+                    <a class="nav__link" href="price.html"> Прайс-лист </a>
+                    <a class="nav__link" href="reviews.html"> Отзывы </a>
+                    <a class="nav__link" href="contacts.html"> Контакты </a>
+                </nav>
+                
+            </div>
+        </div>
+    </header>  
+
+<main>
+    <!-- Вводный блок -->
+    <section class="price-intro">
+        <div class="container">
+            <h1 class="section-title">Прайс-лист</h1>
+            <p class="section-text">
+                Актуальные цены на занятия в образовательном центре «Эдванс». 
+                Стоимость указана за одно занятие.
+            </p>
+        </div>
+    </section>
+
+    <!-- Прайс -->
+    <section class="price">
+        <div class="container">
+
+            <!-- ===== 1. Центр развития детей ===== -->
+            <div class="price-category">
+                <h2 class="price-category__title">Центр развития детей</h2>
+
+                <div class="price-grid">
+                    <div class="price-card">
+                        <h3>Скорочтение</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>700 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Логопед</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Нейрогимнастика</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>700 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Психологические тренинги</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>500 ₽</strong> <small>/ 90 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Клинический психолог</h3>
+                        <ul>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 2. Иностранные языки ===== -->
+            <div class="price-category">
+                <h2 class="price-category__title">Иностранные языки</h2>
+
+                <div class="price-grid">
+                    <div class="price-card">
+                        <h3>Английский язык</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>900 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1100 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Английский для детей 4–6 лет</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>600 ₽</strong> <small>/ 40 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>800 ₽</strong> <small>/ 40 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Китайский язык</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Японский язык</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Немецкий язык</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>900 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1100 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Французский язык</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>900 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1100 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 3. Школьные предметы ===== -->
+            <div class="price-category">
+                <h2 class="price-category__title">Школьные предметы</h2>
+
+                <div class="price-grid">
+                    <div class="price-card">
+                        <h3>Русский язык (начальное обучение)</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>700 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Математика (начальное обучение)</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>700 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1000 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Русский язык (5–11 классы)</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>900 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1100 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Математика (5–11 классы)</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>900 ₽</strong> <small>/ 50 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1100 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Физика</h3>
+                        <ul>
+                            <li><span>Индивидуальные занятия</span> <strong>1200 ₽</strong> <small>/ 50 мин</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. Подготовка к экзаменам ===== -->
+            <div class="price-category">
+                <h2 class="price-category__title">Подготовка к экзаменам</h2>
+
+                <div class="price-grid">
+                    <div class="price-card">
+                        <h3>Математика — ОГЭ</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1000 ₽</strong> <small>/ 60 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 60 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Математика — ЕГЭ</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1300 ₽</strong> <small>/ 60 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1600 ₽</strong> <small>/ 60 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Русский язык — ОГЭ</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1000 ₽</strong> <small>/ 60 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1300 ₽</strong> <small>/ 60 мин</small></li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card">
+                        <h3>Русский язык — ЕГЭ</h3>
+                        <ul>
+                            <li><span>Групповые занятия</span> <strong>1300 ₽</strong> <small>/ 60 мин</small></li>
+                            <li><span>Индивидуальные занятия</span> <strong>1600 ₽</strong> <small>/ 60 мин</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+
+            <!-- Левая часть — название и копирайт -->
+            <div class="footer__col">
+                <p class="footer__brand">Эдванс</p>
+                <p class="footer__text">
+                    © 2026 Центр развития и изучения языков Эдванс.<br>
+                    Все права защищены.
+                </p>
+                <p class="footer__text">ИП Бья Наталья Анатольевна</p>
+            </div>
+
+            <!-- Правая часть — контакты -->
+            <div class="footer__col">
+                <p class="footer__title">Контакты</p>
+                <p class="footer__text">
+                    г. Ростов-на-Дону, ул. Ленина, д. 89/2
+                </p>
+                <p class="footer__text">
+                    <a href="tel:+79281667878">+7 (928) 166-78-78</a>
+                </p>
+                <p class="footer__text">
+                    <a href="mailto:advanceschool2025@gmail.com">advanceschool2025@gmail.com</a>
+                </p>
+            </div>
+
+            <!-- 3. Правая колонка — соцсети (вот сюда) -->
+            <div class="footer__col">
+                <p class="footer__title">Мы в соцсетях</p>
+                <div class="footer__social">
+                    <!-- сюда вставляй иконки -->
+                     <a href="https://vk.ru/advancee2025" target="_blank" aria-label="ВКонтакте">
+                        <img src="images/vk-logo.png" alt="ВКонтакте" width="28" height="28">
+                    </a>
+                    <a href="https://t.me/adnance777" target="_blank" aria-label="Telegram">
+                        <img src="images/tg-logo.png" alt="Telegram" width="28" height="28">
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/advanceschool2025?stkn=MWlmZ3lja2treHBrNw%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram">
+                        <img src="images/inst-logo.png" alt="Instagram" width="28" height="28">
+                    </a>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
