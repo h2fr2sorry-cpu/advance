@@ -1191,3 +1191,73 @@ main section {
 
 
 
+
+
+
+/* ========== ЮРИДИЧЕСКИЕ СТРАНИЦЫ (политики) ========== */
+.legal {
+    padding: 60px 0 20px;
+}
+
+.legal__inner {
+    max-width: 900px;                   /* узкая колонка — удобнее читать длинный текст */
+}
+
+.legal__meta {
+    font-size: 15px;
+    color: #888888;
+    margin: 16px 0 28px;
+}
+
+.legal__card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-left: 4px solid #D92D3F;     /* фирменная красная полоса */
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.legal h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222222;
+    margin: 36px 0 12px;
+}
+
+.legal p,
+.legal li {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.legal ul {
+    padding-left: 24px;
+    margin-bottom: 12px;
+}
+
+.legal li::marker {
+    color: #D92D3F;
+}
+
+.legal a {
+    word-break: break-word;             /* длинные адреса не ломают вёрстку на телефоне */
+}
+
+.legal a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .legal { padding: 40px 0 10px; }
+    .legal .section-title { font-size: 26px; }
+    .legal h2 { font-size: 19px; }
+}
+
+/* Ссылки на политики в подвале */
+.footer__legal a {
+    color: #b0b0b0;
+}
