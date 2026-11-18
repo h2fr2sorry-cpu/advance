@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сведения об образовательной организации — Эдванс</title>
+<meta name="description" content="Сведения об образовательной организации: образовательный центр Эдванс, Ростов-на-Дону.">
+<link rel="stylesheet" href="sveden.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap top">
+    <a href="https://advance-center.ru/index.html"><img src="https://advance-center.ru/images/logo.png" alt="Логотип образовательного центра Эдванс"></a>
+    <nav>
+      <a href="https://advance-center.ru/directions.html">Направления</a>
+      <a href="https://advance-center.ru/about.html">О нас</a>
+      <a href="https://advance-center.ru/price.html">Прайс-лист</a>
+      <a href="https://advance-center.ru/reviews.html">Отзывы</a>
+      <a href="https://advance-center.ru/contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Сведения об образовательной организации</h1>
+  <p class="lead">Информация размещена в соответствии с требованиями законодательства Российской Федерации об образовании. Поля, выделенные <span class="todo">жёлтым</span>, нужно заполнить своими данными.</p>
+
+  <ul class="toc">
+    <li><a href="#common">Основные сведения</a></li>
+    <li><a href="#education">Образование</a></li>
+    <li><a href="#managers">Руководство</a></li>
+  </ul>
+
+  <section id="common">
+    <h2>Основные сведения</h2>
+    <div class="tbl"><table>
+      <tr><th>Полное наименование</th><td>Индивидуальный предприниматель Бья Наталья Анатольевна (образовательный центр «Эдванс»)</td></tr>
+      <tr><th>Краткое наименование</th><td>Центр развития и изучения языков «Эдванс»</td></tr>
+      <tr><th>Дата создания</th><td><span class="todo">дд.мм.гггг</span></td></tr>
+      <tr><th>ОГРНИП / ИНН</th><td><span class="todo">ОГРНИП</span> / <span class="todo">ИНН</span></td></tr>
+      <tr><th>Учредитель</th><td>Бья Наталья Анатольевна</td></tr>
+      <tr><th>Адрес осуществления образовательной деятельности</th><td>г. Ростов-на-Дону, ул. Ленина, д. 89/2</td></tr>
+      <tr><th>Режим работы</th><td><span class="todo">Пн–Пт 09:00–20:00, Сб 09:00–15:00, Вс — выходной</span></td></tr>
+      <tr><th>График работы</th><td><span class="todo">укажите график</span></td></tr>
+      <tr><th>Телефон</th><td><a href="tel:+79281667878">+7 (928) 166-78-78</a></td></tr>
+      <tr><th>Электронная почта</th><td><a href="mailto:advanceschool2025@gmail.com">advanceschool2025@gmail.com</a></td></tr>
+      <tr><th>Лицензия на образовательную деятельность</th><td>Образовательная деятельность осуществляется по программам дополнительного образования <span class="todo">на основании индивидуальной трудовой деятельности / лицензии № ___ от __.__.____</span></td></tr>
+      <tr><th>Места осуществления образовательной деятельности</th><td>г. Ростов-на-Дону, ул. Ленина, д. 89/2</td></tr>
+    </table></div>
+  </section>
+
+
+
+  <section id="education">
+    <h2>Образование</h2>
+    <div class="tbl"><table>
+      <tr><th>Реализуемые образовательные программы</th><td>Дополнительная общеобразовательная программа «Английский язык». Подробнее — на странице <a href="https://advance-center.ru/directions.html">«Направления»</a>.</td></tr>
+      <tr><th>Уровень образования</th><td>Дополнительное образование детей и взрослых</td></tr>
+      <tr><th>Формы обучения</th><td>Очная (индивидуальные и групповые занятия) <span class="todo">/ дистанционная</span></td></tr>
+      <tr><th>Язык образования</th><td>Русский</td></tr>
+      <tr><th>Сроки обучения</th><td><span class="todo">укажите по программам</span></td></tr>
+      <tr><th>Учебные планы, программы, календарный график</th><td><span class="todo"><a href="#">ссылки на документы</a></span></td></tr>
+      <tr><th>Численность обучающихся</th><td><span class="todo">укажите число</span></td></tr>
+    </table></div>
+  </section>
+
+  <section id="managers">
+    <h2>Руководство</h2>
+    <div class="tbl"><table>
+      <tr><th>Руководитель</th><td>Бья Наталья Анатольевна</td></tr>
+      <tr><th>Должность</th><td>Индивидуальный предприниматель, руководитель</td></tr>
+      <tr><th>Контактный телефон</th><td><a href="tel:+79281667878">+7 (928) 166-78-78</a></td></tr>
+      <tr><th>Электронная почта</th><td><a href="mailto:advanceschool2025@gmail.com">advanceschool2025@gmail.com</a></td></tr>
+    </table></div>
+  </section>
+
+
+
+
+
+
+</main>
+
+<footer>
+  <div class="wrap" style="padding-top:24px;padding-bottom:24px">
+    <p>© 2026 Центр развития и изучения языков Эдванс. Все права защищены.<br>ИП Бья Наталья Анатольевна</p>
+    <p>
+      <a href="https://advance-center.ru/privacy-policy.html">Политика конфиденциальности</a><br>
+      <a href="https://advance-center.ru/personal-data-policy.html">Политика обработки персональных данных</a>
+    </p>
+    <p>г. Ростов-на-Дону, ул. Ленина, д. 89/2<br>
+      <a href="tel:+79281667878">+7 (928) 166-78-78</a> · <a href="mailto:advanceschool2025@gmail.com">advanceschool2025@gmail.com</a></p>
+    <p><a href="https://vk.ru/advancee2025">ВКонтакте</a> · <a href="https://t.me/adnance777">Telegram</a> · <a href="https://www.instagram.com/advanceschool2025">Instagram</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
