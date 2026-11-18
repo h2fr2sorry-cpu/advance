@@ -1261,3 +1261,33 @@ main section {
 .footer__legal a {
     color: #b0b0b0;
 }
+
+/* ==========================================================
+   sveden.css — дополнения для страницы «Сведения об образовательной организации»
+   Подключается ПОСЛЕ css/style.css.
+   Основа страницы (.legal, .legal__card, .legal h2 и т.д.) уже есть в style.css,
+   здесь только то, чего там нет.
+   ========================================================== */
+
+/* Подсветка полей, которые нужно заполнить (в тёплой гамме сайта).
+   Перед публикацией уберите теги <mark> в HTML. */
+.legal mark {
+  background-color: #ffe9a8;
+  color: #5c4300;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* Названия пунктов («Полное наименование:» и т.п.) — тёмный цвет как у заголовков */
+.legal p strong {
+  font-weight: 600;
+  color: #222222;
+}
+
+/* Печать: без шапки-меню и подсветки */
+@media print {
+  .burger, .nav { display: none; }
+  .header { position: static; box-shadow: none; }
+  .legal mark { background: none; color: inherit; padding: 0; }
+}
+
